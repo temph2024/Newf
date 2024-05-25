@@ -1,1 +1,14 @@
-gunicorn app:app & python3 scrape.py & python3 getviews.py
+# Start gunicorn
+gunicorn app:app &
+
+# Add a delay of 5 seconds before running the next command
+sleep 5
+
+# Start scrape.py
+python3 scrape.py &
+
+# Add a delay of 5 seconds before running the next command
+sleep 120
+
+# Start getviews.py
+python3 getviews.py &
